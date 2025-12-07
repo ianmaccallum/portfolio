@@ -41,7 +41,7 @@ export function Education() {
                 href="https://ufl.edu"
                 className="transition hover:text-teal-500 dark:hover:text-teal-400"
               >
-                University of Florida
+                University of Florida 🐊
               </Link>
             </dd>
             <dt className="sr-only">Degree</dt>

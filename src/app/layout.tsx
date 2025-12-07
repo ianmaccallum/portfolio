@@ -1,4 +1,6 @@
 import { type Metadata } from 'next'
+import { GeistSans } from 'geist/font/sans'
+import { GeistMono } from 'geist/font/mono'
 
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
@@ -12,6 +14,16 @@ export const metadata: Metadata = {
     default: name,
   },
   description: `${name}'s personal website.`,
+  openGraph: {
+    title: name,
+    description: `${name}'s personal website.`,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: name,
+    description: `${name}'s personal website.`,
+  },
 }
 
 export default function RootLayout({
@@ -20,8 +32,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
-      <body className="flex h-full bg-zinc-50 dark:bg-black">
+    <html lang="en" className={`h-full antialiased ${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
+      <body className="flex h-full bg-zinc-50 font-sans dark:bg-black">
         <Providers>
           <div className="flex w-full">
             <Layout>{children}</Layout>

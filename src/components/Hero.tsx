@@ -21,7 +21,7 @@ function SocialLink({
 export function Hero() {
   return (
     <Container className="mt-9">
-      <div className="max-w-2xl">
+      <div className="flex max-w-2xl flex-col items-center sm:items-start">
         <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
           Ian MacCallum
         </h1>

@@ -1,9 +1,16 @@
 export const name = 'Ian MacCallum'
+export const email = 'ian@parra.io'
 
 export const socialLinks = {
   x: 'https://x.com/iancmaccallum',
   github: 'https://github.com/ianmaccallum',
   linkedin: 'https://linkedin.com/in/imaccallum',
+}
+
+export const socialHandles = {
+  x: '@iancmaccallum',
+  github: 'ianmaccallum',
+  linkedin: 'imaccallum',
 }
 
 export const storeLinks = {

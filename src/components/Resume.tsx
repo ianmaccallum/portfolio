@@ -44,7 +44,7 @@ const resume: Array<Role> = [
     logo: logoParra,
     url: 'https://parra.io',
     start: '2024',
-    end: 'Present',
+    end: '2025',
   },
   {
     company: 'Universe (YC W18)',
