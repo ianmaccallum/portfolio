@@ -66,13 +66,17 @@ function ThemeToggle() {
 function Avatar({ scale = 1 }: { scale?: number }) {
   const size = 96 * scale
   return (
-    <Link href="/" aria-label="Home" className="pointer-events-auto">
+    <Link
+      href="/"
+      aria-label="Home"
+      className="pointer-events-auto flex items-center justify-center rounded-full bg-white p-1.5 shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
+      style={{ width: size, height: size }}
+    >
       <Image
         src={avatarImage}
         alt=""
         sizes="6rem"
-        className="rounded-full bg-zinc-100 object-cover dark:bg-zinc-800"
-        style={{ width: size, height: size }}
+        className="h-full w-full rounded-full object-cover"
         priority
       />
     </Link>
