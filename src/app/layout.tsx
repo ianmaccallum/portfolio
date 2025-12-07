@@ -12,11 +12,6 @@ export const metadata: Metadata = {
     default: name,
   },
   description: `${name}'s personal website.`,
-  alternates: {
-    types: {
-      'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
-    },
-  },
 }
 
 export default function RootLayout({

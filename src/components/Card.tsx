@@ -18,9 +18,11 @@ export function Card<T extends React.ElementType = 'div'>({
   as,
   className,
   children,
+  hover = true,
 }: Omit<React.ComponentPropsWithoutRef<T>, 'as' | 'className'> & {
   as?: T
   className?: string
+  hover?: boolean
 }) {
   let Component = as ?? 'div'
 
@@ -28,6 +30,9 @@ export function Card<T extends React.ElementType = 'div'>({
     <Component
       className={clsx(className, 'group relative flex flex-col items-start')}
     >
+      {hover && (
+        <div className="absolute -inset-4 z-0 scale-95 rounded-2xl bg-zinc-50 opacity-0 transition-all duration-300 ease-out group-hover:scale-100 group-hover:opacity-100 sm:-inset-6 dark:bg-zinc-800/50" />
+      )}
       {children}
     </Component>
   )
@@ -39,11 +44,8 @@ Card.Link = function CardLink({
 }: React.ComponentPropsWithoutRef<typeof Link>) {
   return (
     <>
-      <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50" />
-      <Link {...props}>
-        <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
-        <span className="relative z-10">{children}</span>
-      </Link>
+      <Link {...props} className="absolute -inset-4 z-20 sm:-inset-6" />
+      <span className="relative z-10 text-inherit">{children}</span>
     </>
   )
 }

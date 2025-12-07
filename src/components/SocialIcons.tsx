@@ -34,3 +34,49 @@ export function LinkedInIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
     </svg>
   )
 }
+
+export function ChromeIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
+      <path 
+        d="M12 2a10 10 0 0 1 8.66 5H12l-3.78 6.55" 
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <path 
+        d="M21.78 7.98A10 10 0 0 1 22 12c0 5.52-4.48 10-10 10-4.06 0-7.54-2.43-9.07-5.94l8.65-5.01" 
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <path 
+        d="M3.34 17A10 10 0 0 0 12 22a10 10 0 0 0 8.66-5" 
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" strokeWidth="2" />
+    </svg>
+  )
+}
+
+export function SafariIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
+      <circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" strokeWidth="2" />
+      <line x1="12" y1="7" x2="12" y2="4" stroke="currentColor" strokeWidth="2" />
+      <line x1="12" y1="20" x2="12" y2="17" stroke="currentColor" strokeWidth="2" />
+      <line x1="17" y1="12" x2="20" y2="12" stroke="currentColor" strokeWidth="2" />
+      <line x1="4" y1="12" x2="7" y2="12" stroke="currentColor" strokeWidth="2" />
+      <line x1="15.54" y1="8.46" x2="17.66" y2="6.34" stroke="currentColor" strokeWidth="2" />
+      <line x1="6.34" y1="17.66" x2="8.46" y2="15.54" stroke="currentColor" strokeWidth="2" />
+      <line x1="8.46" y1="8.46" x2="6.34" y2="6.34" stroke="currentColor" strokeWidth="2" />
+      <line x1="17.66" y1="17.66" x2="15.54" y2="15.54" stroke="currentColor" strokeWidth="2" />
+      {/* Central blue pointer (can be overridden with stroke) */}
+      <line x1="12" y1="12" x2="15" y2="8.5" stroke="currentColor" strokeWidth="2" />
+    </svg>
+  )
+}
