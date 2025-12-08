@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useTheme } from 'next-themes'
+import { motion } from 'framer-motion'
 
 import { Container } from '@/components/Container'
 import avatarImage from '@/images/avatar.png'
@@ -138,9 +139,18 @@ export function Header() {
             className="flex justify-center sm:justify-start"
             style={{ height: 96 }}
           >
-            <div style={{ transform: `scale(${avatarScale})`, transformOrigin: 'top center' }} className="sm:origin-top-left">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.5,
+                ease: [0.21, 0.47, 0.32, 0.98],
+              }}
+              style={{ transform: `scale(${avatarScale})`, transformOrigin: 'top center' }}
+              className="sm:origin-top-left"
+            >
               <Avatar />
-            </div>
+            </motion.div>
           </div>
         </Container>
       )}

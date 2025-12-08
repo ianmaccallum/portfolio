@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import { EmailPopover } from '@/components/EmailPopover'
+import { FadeIn } from '@/components/FadeIn'
 import { GitHubIcon, LinkedInIcon, XIcon } from '@/components/SocialIcons'
 import { socialLinks } from '@/lib/info'
 
@@ -22,27 +23,31 @@ export function Hero() {
   return (
     <Container className="mt-9">
       <div className="flex max-w-2xl flex-col items-center sm:items-start">
-        <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-          Ian MacCallum
-        </h1>
-        <div className="mt-6 flex items-center gap-6">
-          <SocialLink
-            href={socialLinks.x}
-            aria-label="Follow on X"
-            icon={XIcon}
-          />
-          <SocialLink
-            href={socialLinks.github}
-            aria-label="Follow on GitHub"
-            icon={GitHubIcon}
-          />
-          <SocialLink
-            href={socialLinks.linkedin}
-            aria-label="Follow on LinkedIn"
-            icon={LinkedInIcon}
-          />
-          <EmailPopover />
-        </div>
+        <FadeIn delay={300}>
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+            Ian MacCallum
+          </h1>
+        </FadeIn>
+        <FadeIn delay={400}>
+          <div className="mt-6 flex items-center gap-6">
+            <SocialLink
+              href={socialLinks.x}
+              aria-label="Follow on X"
+              icon={XIcon}
+            />
+            <SocialLink
+              href={socialLinks.github}
+              aria-label="Follow on GitHub"
+              icon={GitHubIcon}
+            />
+            <SocialLink
+              href={socialLinks.linkedin}
+              aria-label="Follow on LinkedIn"
+              icon={LinkedInIcon}
+            />
+            <EmailPopover />
+          </div>
+        </FadeIn>
       </div>
     </Container>
   )

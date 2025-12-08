@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import { Container } from '@/components/Container'
+import { FadeIn } from '@/components/FadeIn'
 import { storeLinks } from '@/lib/info'
 import logoDiy from '@/images/projects/diy.png'
 import logoDiyDark from '@/images/projects/diy-dark.png'
@@ -80,107 +81,116 @@ export function Projects() {
         className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:max-w-5xl"
       >
         {/* DIYProject.ai */}
-        <li className="group relative flex flex-col items-start cursor-pointer">
-          <Link
-            href="https://diyproject.ai"
-            className="contents"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="absolute -inset-4 z-0 scale-95 rounded-2xl bg-zinc-50 opacity-0 transition-all duration-300 ease-out group-hover:scale-100 group-hover:opacity-100 sm:-inset-6 dark:bg-zinc-800/50" />
-            <div className="relative z-10 flex items-center gap-3">
-              <ProjectLogo src={logoDiy} srcDark={logoDiyDark} />
-              <h3 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                DIYProject.ai
-              </h3>
-            </div>
-            <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-              AI-powered DIY project planner and home maintenance tracker.
-            </p>
-            <div className="relative z-10 mt-4">
-              <p className="inline-flex items-center gap-1.5 text-sm font-medium leading-none text-zinc-500 transition group-hover:text-teal-500 dark:text-zinc-400 dark:group-hover:text-teal-400">
-                <LinkIcon className="h-4 w-4 shrink-0" />
-                <span>diyproject.ai</span>
+        <FadeIn>
+          <li className="group relative flex flex-col items-start cursor-pointer">
+            <Link
+              href="https://diyproject.ai"
+              className="contents"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="absolute -inset-4 z-0 scale-95 rounded-2xl bg-zinc-50 opacity-0 transition-all duration-300 ease-out group-hover:scale-100 group-hover:opacity-100 sm:-inset-6 dark:bg-zinc-800/50" />
+              <div className="relative z-10 flex items-center gap-3">
+                <ProjectLogo src={logoDiy} srcDark={logoDiyDark} />
+                <h3 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                  DIYProject.ai
+                </h3>
+              </div>
+              <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                AI-powered DIY project planner and home maintenance tracker.
               </p>
-            </div>
-          </Link>
-        </li>
+              <div className="relative z-10 mt-4">
+                <p className="inline-flex items-center gap-1.5 text-sm font-medium leading-none text-zinc-500 transition group-hover:text-teal-500 dark:text-zinc-400 dark:group-hover:text-teal-400">
+                  <LinkIcon className="h-4 w-4 shrink-0" />
+                  <span>diyproject.ai</span>
+                </p>
+              </div>
+            </Link>
+          </li>
+        </FadeIn>
 
         {/* Parra */}
-        <li className="group relative flex flex-col items-start cursor-pointer">
-          <Link
-            href="https://parra.io"
-            className="contents"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="absolute -inset-4 z-0 scale-95 rounded-2xl bg-zinc-50 opacity-0 transition-all duration-300 ease-out group-hover:scale-100 group-hover:opacity-100 sm:-inset-6 dark:bg-zinc-800/50" />
+        <FadeIn delay={100}>
+          <li className="group relative flex flex-col items-start cursor-pointer">
+            <Link
+              href="https://parra.io"
+              className="contents"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="absolute -inset-4 z-0 scale-95 rounded-2xl bg-zinc-50 opacity-0 transition-all duration-300 ease-out group-hover:scale-100 group-hover:opacity-100 sm:-inset-6 dark:bg-zinc-800/50" />
+              <div className="relative z-10 flex items-center gap-3">
+                <ProjectLogo src={logoParra} />
+                <h3 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                  Parra
+                </h3>
+              </div>
+              <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                Everything you need to build apps.
+              </p>
+              <div className="relative z-10 mt-4">
+                <p className="inline-flex items-center gap-1.5 text-sm font-medium leading-none text-zinc-500 transition group-hover:text-teal-500 dark:text-zinc-400 dark:group-hover:text-teal-400">
+                  <LinkIcon className="h-4 w-4 shrink-0" />
+                  <span>parra.io</span>
+                </p>
+              </div>
+            </Link>
+          </li>
+        </FadeIn>
+
+        {/* Max Page Size */}
+        <FadeIn delay={200}>
+          <li className="group relative flex flex-col items-start">
             <div className="relative z-10 flex items-center gap-3">
-              <ProjectLogo src={logoParra} />
+              <ProjectLogo src={logoMaxPageSize} />
               <h3 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                Parra
+                Max Page Size
               </h3>
             </div>
             <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-              Everything you need to build apps.
+              Browser extension that auto-selects max page size on paginated
+              sites.
             </p>
-            <div className="relative z-10 mt-4">
-              <p className="inline-flex items-center gap-1.5 text-sm font-medium leading-none text-zinc-500 transition group-hover:text-teal-500 dark:text-zinc-400 dark:group-hover:text-teal-400">
-                <LinkIcon className="h-4 w-4 shrink-0" />
-                <span>parra.io</span>
-              </p>
+            <div className="relative z-10 mt-4 flex flex-wrap gap-3">
+              <StoreButton href={storeLinks.maxPageSize.chrome} icon={chromeIcon}>
+                Chrome
+              </StoreButton>
+              <StoreButton href={storeLinks.maxPageSize.safari} icon={safariIcon}>
+                Safari
+              </StoreButton>
             </div>
-          </Link>
-        </li>
-
-        {/* Max Page Size */}
-        <li className="group relative flex flex-col items-start">
-          <div className="relative z-10 flex items-center gap-3">
-            <ProjectLogo src={logoMaxPageSize} />
-            <h3 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
-              Max Page Size
-            </h3>
-          </div>
-          <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-            Browser extension that auto-selects max page size on paginated
-            sites.
-          </p>
-          <div className="relative z-10 mt-4 flex flex-wrap gap-3">
-            <StoreButton href={storeLinks.maxPageSize.chrome} icon={chromeIcon}>
-              Chrome
-            </StoreButton>
-            <StoreButton href={storeLinks.maxPageSize.safari} icon={safariIcon}>
-              Safari
-            </StoreButton>
-          </div>
-        </li>
+          </li>
+        </FadeIn>
 
         {/* Mojo Score Keeper */}
-        <li className="group relative flex flex-col items-start">
-          <div className="relative z-10 flex items-center gap-3">
-            <ProjectLogo src={logoMojo} />
-            <h3 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
-              Mojo Score Keeper
-            </h3>
-          </div>
-          <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-            Clean, intuitive score keeper for the card game Mojo.
-          </p>
-          <div className="relative z-10 mt-4">
-            <Link
-              href="https://apps.apple.com/us/app/mojo-score-keeper/id6749283633"
-              target="_blank" rel="noopener noreferrer"
-              className="transition hover:opacity-80"
-            >
-              <Image
-                src={downloadAppStore}
-                alt="Download on the App Store"
-                className="h-9 w-auto"
-                unoptimized
-              />
-            </Link>
-          </div>
-        </li>
+        <FadeIn delay={300}>
+          <li className="group relative flex flex-col items-start">
+            <div className="relative z-10 flex items-center gap-3">
+              <ProjectLogo src={logoMojo} />
+              <h3 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                Mojo Score Keeper
+              </h3>
+            </div>
+            <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+              Clean, intuitive score keeper for the card game Mojo.
+            </p>
+            <div className="relative z-10 mt-4">
+              <Link
+                href="https://apps.apple.com/us/app/mojo-score-keeper/id6749283633"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:opacity-80"
+              >
+                <Image
+                  src={downloadAppStore}
+                  alt="Download on the App Store"
+                  className="h-9 w-auto"
+                  unoptimized
+                />
+              </Link>
+            </div>
+          </li>
+        </FadeIn>
       </ul>
     </Container>
   )
