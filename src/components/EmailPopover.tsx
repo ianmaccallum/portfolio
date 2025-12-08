@@ -3,8 +3,10 @@
 import {
   HoverCard,
   HoverCardContent,
+  HoverCardContentProps,
   HoverCardTrigger,
 } from '@/components/ui/hover-card'
+import { cn } from '@/lib/utils'
 
 function EnvelopeIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -22,20 +24,18 @@ const emails = [
   { label: 'Personal', email: 'iancmaccallum@gmail.com' },
 ]
 
-export function EmailPopover() {
+interface EmailPopoverProps extends HoverCardContentProps {
+  children: React.ReactNode
+}
+
+export function EmailPopover({ children, ...props }: EmailPopoverProps) {
+  const { className, ...propsRest} = props
   return (
     <HoverCard openDelay={100} closeDelay={200}>
-      <HoverCardTrigger asChild>
-        <button
-          className="group -m-1 flex items-center p-1 outline-none"
-          aria-label="Contact email"
-        >
-          <EnvelopeIcon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
-        </button>
-      </HoverCardTrigger>
+      <HoverCardTrigger asChild>{children}</HoverCardTrigger>
       <HoverCardContent
-        align="start"
-        className="w-64 rounded-xl border-zinc-900/5 bg-white p-2 shadow-lg dark:border-zinc-800 dark:bg-zinc-900"
+        className={cn("w-64 rounded-xl border-zinc-900/5 bg-white p-2 shadow-lg dark:border-zinc-800 dark:bg-zinc-900", className)}
+        {...propsRest}
       >
         <div className="px-2 py-1.5">
           <p className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
