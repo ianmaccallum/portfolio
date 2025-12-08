@@ -25,9 +25,9 @@ const emails = [
 
 export function Footer() {
   return (
-    <footer className="mt-16 flex-none">
+    <footer className="flex-none">
       <ContainerOuter>
-        <div className="py-8">
+        <div className="py-12">
           <ContainerInner>
             <div className="flex justify-center">
               <HoverCard openDelay={100} closeDelay={200}>
