@@ -117,6 +117,31 @@ export default async function Image() {
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#71717a"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+                <span>{email}</span>
+              </div>
+
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  fontSize: '24px',
+                  color: '#71717a',
+                }}
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
                   fill="#71717a"
                 >
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -181,16 +206,11 @@ export default async function Image() {
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#71717a"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  fill="#71717a"
                 >
-                  <rect width="20" height="16" x="2" y="4" rx="2" />
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  <path d="M15.725 0l-1.72 1.277 6.39 8.588 1.716-1.277L15.725 0zm-3.94 3.418l-1.369 1.644 8.225 6.85 1.369-1.644-8.225-6.85zm-3.15 4.465l-.905 1.94 9.702 4.517.904-1.94-9.701-4.517zm-1.85 4.86l-.44 2.093 10.473 2.201.44-2.092-10.473-2.203zM1.89 15.47V24h14.27v-8.53H1.89zm1.8 1.8h10.67v4.93H3.69v-4.93zm.945 1.495v1.82h8.79v-1.82H4.635z" />
                 </svg>
-                <span>{email}</span>
+                <span>{socialHandles.stackoverflow}</span>
               </div>
             </div>
           </div>

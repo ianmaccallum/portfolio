@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { EmailPopover } from '@/components/EmailPopover'
 import { FadeIn } from '@/components/FadeIn'
-import { GitHubIcon, LinkedInIcon, XIcon } from '@/components/SocialIcons'
+import { GitHubIcon, LinkedInIcon, StackOverflowIcon, XIcon } from '@/components/SocialIcons'
 import { socialLinks } from '@/lib/info'
 
 function SocialLink({
@@ -13,7 +13,7 @@ function SocialLink({
   icon: React.ComponentType<{ className?: string }>
 }) {
   return (
-    <Link className="group -m-1 p-1" {...props}>
+    <Link className="group -m-1 p-1" target="_blank" rel="noopener noreferrer" {...props}>
       <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
     </Link>
   )
@@ -44,6 +44,11 @@ export function Hero() {
               href={socialLinks.linkedin}
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
+            />
+            <SocialLink
+              href={socialLinks.stackoverflow}
+              aria-label="Follow on Stack Overflow"
+              icon={StackOverflowIcon}
             />
             <EmailPopover />
           </div>

@@ -35,48 +35,11 @@ export function LinkedInIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-export function ChromeIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+export function StackOverflowIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
-      <path 
-        d="M12 2a10 10 0 0 1 8.66 5H12l-3.78 6.55" 
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-      />
-      <path 
-        d="M21.78 7.98A10 10 0 0 1 22 12c0 5.52-4.48 10-10 10-4.06 0-7.54-2.43-9.07-5.94l8.65-5.01" 
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-      />
-      <path 
-        d="M3.34 17A10 10 0 0 0 12 22a10 10 0 0 0 8.66-5" 
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-      />
-      <circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" strokeWidth="2" />
-    </svg>
-  )
-}
-
-export function SafariIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
-      <circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" strokeWidth="2" />
-      <line x1="12" y1="7" x2="12" y2="4" stroke="currentColor" strokeWidth="2" />
-      <line x1="12" y1="20" x2="12" y2="17" stroke="currentColor" strokeWidth="2" />
-      <line x1="17" y1="12" x2="20" y2="12" stroke="currentColor" strokeWidth="2" />
-      <line x1="4" y1="12" x2="7" y2="12" stroke="currentColor" strokeWidth="2" />
-      <line x1="15.54" y1="8.46" x2="17.66" y2="6.34" stroke="currentColor" strokeWidth="2" />
-      <line x1="6.34" y1="17.66" x2="8.46" y2="15.54" stroke="currentColor" strokeWidth="2" />
-      <line x1="8.46" y1="8.46" x2="6.34" y2="6.34" stroke="currentColor" strokeWidth="2" />
-      <line x1="17.66" y1="17.66" x2="15.54" y2="15.54" stroke="currentColor" strokeWidth="2" />
-      {/* Central blue pointer (can be overridden with stroke) */}
-      <line x1="12" y1="12" x2="15" y2="8.5" stroke="currentColor" strokeWidth="2" />
-    </svg>
-  )
+<path d="M16.8668 19.4166V14.6667H18.4762V21H4V14.6667H5.60942V19.4166H16.8668Z" />
+<path d="M6.88296 13.5791L15.1853 15.297L15.5343 13.6622L7.23194 11.9443L6.88296 13.5791ZM7.98138 9.66546L15.6719 13.1915L16.3883 11.6773L8.69774 8.15124L7.98138 9.66546ZM10.1096 5.95099L16.6287 11.296L17.7145 10.0124L11.1955 4.6674L10.1096 5.95099ZM14.3179 2L12.9565 2.99688L18.0196 9.6985L19.381 8.70162L14.3179 2ZM6.71436 17.381H15.1981V15.7104H6.71436V17.381Z"/>
+</svg>
+ )
 }
