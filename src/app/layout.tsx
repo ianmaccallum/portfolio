@@ -4,25 +4,58 @@ import { GeistMono } from 'geist/font/mono'
 
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
-import { name } from '@/lib/info'
+import { name, siteUrl, description } from '@/lib/info'
 
 import '@/styles/tailwind.css'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     template: `%s - ${name}`,
     default: name,
   },
-  description: `${name}'s personal website.`,
+  description,
+  keywords: [
+    'Ian MacCallum',
+    'software engineer',
+    'iOS developer',
+    'full stack developer',
+    'Parra',
+    'Swift',
+    'TypeScript',
+    'React',
+    'Next.js',
+  ],
+  authors: [{ name, url: siteUrl }],
+  creator: name,
   openGraph: {
     title: name,
-    description: `${name}'s personal website.`,
+    description,
+    url: siteUrl,
+    siteName: name,
     type: 'website',
+    locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
     title: name,
-    description: `${name}'s personal website.`,
+    description,
+    creator: '@iancmaccallum',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    // Add your Google Search Console verification code here
+    // google: 'your-verification-code',
   },
 }
 

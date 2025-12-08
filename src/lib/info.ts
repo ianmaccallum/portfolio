@@ -1,5 +1,7 @@
 export const name = 'Ian MacCallum'
 export const email = 'ian@parra.io'
+export const siteUrl = 'https://ian.maccallum.dev'
+export const description = 'Software engineer and founder. Building DIYProject.ai and other projects.'
 
 export const socialLinks = {
   x: 'https://x.com/iancmaccallum',
