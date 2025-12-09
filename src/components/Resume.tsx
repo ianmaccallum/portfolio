@@ -76,6 +76,8 @@ function Role({ role }: { role: Role }) {
         <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
           <Link
             href={role.url}
+            target="_blank"
+            rel="noopener noreferrer"
             className="transition hover:text-teal-500 dark:hover:text-teal-400"
           >
             {role.company}
