@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
 interface FadeInProps {
@@ -10,25 +9,10 @@ interface FadeInProps {
 }
 
 export function FadeIn({ children, className = '', delay = 0 }: FadeInProps) {
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) {
-    return (
-      <div className={className} style={{ opacity: 0 }}>
-        {children}
-      </div>
-    )
-  }
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{
         duration: 0.5,
         delay: delay / 1000,
@@ -50,25 +34,10 @@ export function FadeInStagger({
   className?: string
   faster?: boolean
 }) {
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) {
-    return (
-      <div className={className} style={{ opacity: 0 }}>
-        {children}
-      </div>
-    )
-  }
-
   return (
     <motion.div
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: '-50px' }}
+      animate="visible"
       transition={{ staggerChildren: faster ? 0.08 : 0.12 }}
       className={className}
     >

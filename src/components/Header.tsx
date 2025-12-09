@@ -101,12 +101,7 @@ function SmallAvatar() {
 export function Header() {
   const isHomePage = usePathname() === '/'
   const [avatarScale, setAvatarScale] = useState(1)
-  const [mounted, setMounted] = useState(false)
   const avatarRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   useEffect(() => {
     if (!isHomePage) return
@@ -142,24 +137,18 @@ export function Header() {
             className="flex justify-center sm:justify-start"
             style={{ height: 96 }}
           >
-            {mounted ? (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  duration: 0.5,
-                  ease: [0.21, 0.47, 0.32, 0.98],
-                }}
-                style={{ transform: `scale(${avatarScale})`, transformOrigin: 'top center' }}
-                className="sm:origin-top-left"
-              >
-                <Avatar />
-              </motion.div>
-            ) : (
-              <div style={{ opacity: 0 }}>
-                <Avatar />
-              </div>
-            )}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.5,
+                ease: [0.21, 0.47, 0.32, 0.98],
+              }}
+              style={{ transform: `scale(${avatarScale})`, transformOrigin: 'top center' }}
+              className="sm:origin-top-left"
+            >
+              <Avatar />
+            </motion.div>
           </div>
         </Container>
       )}

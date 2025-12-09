@@ -67,7 +67,7 @@ function EmailContent() {
 
 export function EmailPopover({ children, ...props }: EmailPopoverProps) {
   const { className, ...propsRest } = props
-  const [isTouchDevice, setIsTouchDevice] = useState(false)
+  const [isTouchDevice, setIsTouchDevice] = useState<boolean | null>(null)
 
   useEffect(() => {
     setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0)
@@ -77,6 +77,11 @@ export function EmailPopover({ children, ...props }: EmailPopoverProps) {
     'w-64 rounded-xl border-zinc-900/5 bg-white p-2 shadow-lg dark:border-zinc-800 dark:bg-zinc-900',
     className
   )
+
+  // Render children only until we detect touch capability
+  if (isTouchDevice === null) {
+    return <>{children}</>
+  }
 
   if (isTouchDevice) {
     return (
