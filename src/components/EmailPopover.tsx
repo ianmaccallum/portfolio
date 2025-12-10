@@ -38,7 +38,7 @@ function EmailContent() {
   return (
     <>
       <div className="px-2 py-1.5">
-        <p className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
+        <p className="text-xs font-medium text-zinc-500">
           Get in touch
         </p>
       </div>
@@ -46,16 +46,16 @@ function EmailContent() {
         <a
           key={email}
           href={`mailto:${email}`}
-          className="group flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-zinc-100 dark:hover:bg-zinc-800"
+          className="group flex items-center gap-3 rounded-lg px-2 py-2 transition hover:bg-zinc-100"
         >
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-zinc-100 transition-colors duration-200 group-hover:bg-teal-500 dark:bg-zinc-800 dark:group-hover:bg-teal-500">
-            <EnvelopeIcon className="h-4 w-4 shrink-0 fill-zinc-500 transition-colors duration-200 group-hover:fill-white dark:fill-zinc-400 dark:group-hover:fill-white" />
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-zinc-100 transition-colors duration-200 group-hover:bg-teal-500">
+            <EnvelopeIcon className="h-4 w-4 shrink-0 fill-zinc-500 transition-colors duration-200 group-hover:fill-white" />
           </div>
           <div className="flex shrink-0 flex-col">
-            <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
+            <span className="text-xs font-medium text-zinc-500">
               {label}
             </span>
-            <span className="text-sm font-medium text-zinc-800 dark:text-zinc-200">
+            <span className="text-sm font-medium text-zinc-800">
               {email}
             </span>
           </div>
@@ -74,7 +74,7 @@ export function EmailPopover({ children, ...props }: EmailPopoverProps) {
   }, [])
 
   const contentClassName = cn(
-    'w-64 rounded-xl border-zinc-900/5 bg-white p-2 shadow-lg dark:border-zinc-800 dark:bg-zinc-900',
+    'w-64 rounded-xl border-zinc-900/5 bg-white p-2 shadow-lg',
     className
   )
 

@@ -14,7 +14,7 @@ function SocialLink({
 }) {
   return (
     <Link className="group -m-1 p-1" target="_blank" rel="noopener noreferrer" {...props}>
-      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600" />
     </Link>
   )
 }
@@ -24,7 +24,7 @@ export function Hero() {
     <Container className="mt-9">
       <div className="flex max-w-2xl flex-col items-center sm:items-start">
         <FadeIn delay={300}>
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl">
             Ian MacCallum
           </h1>
         </FadeIn>
@@ -58,7 +58,7 @@ export function Hero() {
                 <svg
                   viewBox="0 0 24 24"
                   aria-hidden="true"
-                  className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300"
+                  className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600"
                 >
                   <path
                     fillRule="evenodd"

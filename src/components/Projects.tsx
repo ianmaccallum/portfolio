@@ -5,7 +5,6 @@ import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import { storeLinks } from '@/lib/info'
 import logoDiy from '@/images/projects/diy.png'
-import logoDiyDark from '@/images/projects/diy-dark.png'
 import logoParra from '@/images/projects/parra.png'
 import logoMaxPageSize from '@/images/projects/max-page-size.png'
 import logoMojo from '@/images/projects/mojo.png'
@@ -24,29 +23,15 @@ function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-function ProjectLogo({
-  src,
-  srcDark,
-}: {
-  src: typeof logoDiy
-  srcDark?: typeof logoDiy
-}) {
+function ProjectLogo({ src }: { src: typeof logoDiy }) {
   return (
-    <div className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg bg-white p-1 shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+    <div className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg bg-white p-1 shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5">
       <Image
         src={src}
         alt=""
-        className={`h-full w-full rounded-md object-cover ${srcDark ? 'opacity-100 dark:opacity-0' : ''}`}
+        className="h-full w-full rounded-md object-cover"
         unoptimized
       />
-      {srcDark && (
-        <Image
-          src={srcDark}
-          alt=""
-          className="absolute inset-1 h-[calc(100%-8px)] w-[calc(100%-8px)] rounded-md object-cover opacity-0 dark:opacity-100"
-          unoptimized
-        />
-      )}
     </div>
   )
 }
@@ -65,7 +50,7 @@ function StoreButton({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group inline-flex items-center gap-2 rounded-full bg-white py-1.5 pr-4 pl-1.5 text-sm font-medium text-zinc-800 shadow-sm ring-1 ring-zinc-200 transition hover:bg-zinc-50 hover:ring-zinc-300 dark:bg-zinc-800 dark:text-zinc-100 dark:ring-zinc-700 dark:hover:bg-zinc-700 dark:hover:ring-zinc-600"
+      className="group inline-flex items-center gap-2 rounded-full bg-white py-1.5 pr-4 pl-1.5 text-sm font-medium text-zinc-800 shadow-sm ring-1 ring-zinc-200 transition hover:bg-zinc-50 hover:ring-zinc-300"
     >
       <Image src={icon} alt="" className="h-6 w-6" unoptimized />
       <span>{children}</span>
@@ -89,18 +74,18 @@ export function Projects() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="absolute -inset-4 z-0 scale-95 rounded-2xl bg-zinc-50 opacity-0 transition-all duration-300 ease-out group-hover:scale-100 group-hover:opacity-100 sm:-inset-6 dark:bg-zinc-800/50" />
+              <div className="absolute -inset-4 z-0 scale-95 rounded-2xl bg-zinc-50 opacity-0 transition-all duration-300 ease-out group-hover:scale-100 group-hover:opacity-100 sm:-inset-6" />
               <div className="relative z-10 flex items-center gap-3">
-                <ProjectLogo src={logoDiy} srcDark={logoDiyDark} />
-                <h3 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                <ProjectLogo src={logoDiy} />
+                <h3 className="text-base font-semibold text-zinc-800">
                   DIYProject.ai
                 </h3>
               </div>
-              <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+              <p className="relative z-10 mt-2 text-sm text-zinc-600">
                 AI-powered DIY project planner and home maintenance tracker.
               </p>
               <div className="relative z-10 mt-4">
-                <p className="inline-flex items-center gap-1.5 text-sm font-medium leading-none text-zinc-500 transition group-hover:text-teal-500 dark:text-zinc-400 dark:group-hover:text-teal-400">
+                <p className="inline-flex items-center gap-1.5 text-sm font-medium leading-none text-zinc-500 transition group-hover:text-teal-500">
                   <LinkIcon className="h-4 w-4 shrink-0" />
                   <span>diyproject.ai</span>
                 </p>
@@ -118,18 +103,18 @@ export function Projects() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="absolute -inset-4 z-0 scale-95 rounded-2xl bg-zinc-50 opacity-0 transition-all duration-300 ease-out group-hover:scale-100 group-hover:opacity-100 sm:-inset-6 dark:bg-zinc-800/50" />
+              <div className="absolute -inset-4 z-0 scale-95 rounded-2xl bg-zinc-50 opacity-0 transition-all duration-300 ease-out group-hover:scale-100 group-hover:opacity-100 sm:-inset-6" />
               <div className="relative z-10 flex items-center gap-3">
                 <ProjectLogo src={logoParra} />
-                <h3 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                <h3 className="text-base font-semibold text-zinc-800">
                   Parra
                 </h3>
               </div>
-              <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+              <p className="relative z-10 mt-2 text-sm text-zinc-600">
                 Everything you need to build apps.
               </p>
               <div className="relative z-10 mt-4">
-                <p className="inline-flex items-center gap-1.5 text-sm font-medium leading-none text-zinc-500 transition group-hover:text-teal-500 dark:text-zinc-400 dark:group-hover:text-teal-400">
+                <p className="inline-flex items-center gap-1.5 text-sm font-medium leading-none text-zinc-500 transition group-hover:text-teal-500">
                   <LinkIcon className="h-4 w-4 shrink-0" />
                   <span>parra.io</span>
                 </p>
@@ -143,11 +128,11 @@ export function Projects() {
           <li className="group relative flex flex-col items-start">
             <div className="relative z-10 flex items-center gap-3">
               <ProjectLogo src={logoMaxPageSize} />
-              <h3 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
+              <h3 className="text-base font-semibold text-zinc-800">
                 Max Page Size
               </h3>
             </div>
-            <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+            <p className="relative z-10 mt-2 text-sm text-zinc-600">
               Browser extension that auto-selects max page size on paginated
               sites.
             </p>
@@ -167,11 +152,11 @@ export function Projects() {
           <li className="group relative flex flex-col items-start">
             <div className="relative z-10 flex items-center gap-3">
               <ProjectLogo src={logoMojo} />
-              <h3 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
+              <h3 className="text-base font-semibold text-zinc-800">
                 Mojo Score Keeper
               </h3>
             </div>
-            <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+            <p className="relative z-10 mt-2 text-sm text-zinc-600">
               Clean, intuitive score keeper for the card game Mojo.
             </p>
             <div className="relative z-10 mt-4">
