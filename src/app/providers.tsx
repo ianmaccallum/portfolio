@@ -16,6 +16,17 @@ function usePrevious<T>(value: T) {
 
 function ThemeWatcher() {
   let { resolvedTheme, setTheme } = useTheme()
+  let hasInitialized = useRef(false)
+
+  // Add data-theme-ready attribute after hydration to enable transitions
+  // This prevents the theme flash on initial page load
+  useEffect(() => {
+    // Small delay to ensure theme is fully applied before enabling transitions
+    const timer = requestAnimationFrame(() => {
+      document.documentElement.setAttribute('data-theme-ready', '')
+    })
+    return () => cancelAnimationFrame(timer)
+  }, [])
 
   useEffect(() => {
     let media = window.matchMedia('(prefers-color-scheme: dark)')
@@ -27,7 +38,14 @@ function ThemeWatcher() {
       }
     }
 
-    onMediaChange()
+    // Skip the initial call to prevent theme flash on mount
+    // Only respond to actual system preference changes after mount
+    if (hasInitialized.current) {
+      onMediaChange()
+    } else {
+      hasInitialized.current = true
+    }
+
     media.addEventListener('change', onMediaChange)
 
     return () => {
@@ -46,7 +64,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
   return (
     <AppContext.Provider value={{ previousPathname }}>
-      <ThemeProvider attribute="class">
+      <ThemeProvider attribute="class" disableTransitionOnChange>
         <ThemeWatcher />
         {children}
       </ThemeProvider>
