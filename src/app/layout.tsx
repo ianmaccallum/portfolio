@@ -55,6 +55,27 @@ export const metadata: Metadata = {
   },
 }
 
+// Script that runs before body to prevent any flash
+// This must match the logic in next-themes
+const themeInitScript = `
+(function() {
+  function getTheme() {
+    try {
+      var stored = localStorage.getItem('theme');
+      if (stored === 'dark') return 'dark';
+      if (stored === 'light') return 'light';
+      // stored is 'system' or null, use system preference
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    } catch (e) {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+  }
+  var theme = getTheme();
+  document.documentElement.classList.toggle('dark', theme === 'dark');
+  document.documentElement.style.colorScheme = theme;
+})();
+`
+
 export default function RootLayout({
   children,
 }: {
@@ -62,6 +83,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`h-full antialiased ${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{ __html: themeInitScript }}
+        />
+      </head>
       <body className="flex h-full bg-zinc-50 font-sans dark:bg-black">
         <Providers>
           <div className="flex w-full">

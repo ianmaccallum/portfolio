@@ -12,6 +12,7 @@
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
+
 /*
  * Only apply transitions after page has loaded to prevent theme flash.
  * The [data-theme-ready] attribute is added by the ThemeProvider after hydration.
