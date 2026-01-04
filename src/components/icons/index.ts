@@ -1,4 +1,5 @@
 export { AcademicCapIcon } from './AcademicCapIcon'
+export { ArrowUpRightIcon } from './ArrowUpRightIcon'
 export { BriefcaseIcon } from './BriefcaseIcon'
 export { ChevronRightIcon } from './ChevronRightIcon'
 export { EnvelopeIcon } from './EnvelopeIcon'
