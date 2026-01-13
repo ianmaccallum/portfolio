@@ -4,6 +4,7 @@ import { Hero } from '@/components/Hero'
 import { Photos } from '@/components/Photos'
 import { Projects } from '@/components/Projects'
 import { Resume } from '@/components/Resume'
+import { ResumeDownload } from '@/components/ResumeDownload'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
             <Resume />
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
+            <ResumeDownload />
             <Education />
           </div>
         </div>
