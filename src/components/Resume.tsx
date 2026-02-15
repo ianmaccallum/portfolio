@@ -18,6 +18,14 @@ interface Role {
 
 const resume: Array<Role> = [
   {
+    company: 'Stable Kernel',
+    title: 'Principal Software Engineer',
+    logo: logoStableKernel,
+    url: 'https://stablekernel.com',
+    start: '2026',
+    end: 'Present',
+  },
+  {
     company: 'Parra',
     title: 'Founder',
     logo: logoParra,
