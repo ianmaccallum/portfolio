@@ -14,6 +14,7 @@ import downloadAppStore from '@/images/download-app-store.svg'
 import chromeIcon from '@/images/chrome.png'
 import safariIcon from '@/images/safari.png'
 import logoOnlyRecipes from '@/images/projects/only-recipes.png'
+import logoNoContext from '@/images/projects/no-context.svg'
 
 function ProjectLogo({ src, bordered }: { src: typeof logoDiy; bordered?: boolean }) {
   return (
@@ -103,8 +104,35 @@ export function Projects() {
           </li>
         </FadeIn>
 
-        {/* Mojo Score Keeper */}
+        {/* No Context Bot */}
         <FadeIn delay={100}>
+          <li className="group relative flex flex-col items-start cursor-pointer">
+            <Link
+              href="https://nocontextbot.com"
+              className="contents"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="absolute -inset-4 z-0 scale-95 rounded-2xl bg-zinc-50 opacity-0 transition-all duration-300 ease-out group-hover:scale-100 group-hover:opacity-100 sm:-inset-6" />
+              <div className="relative z-10 flex items-center gap-3">
+                <ProjectLogo src={logoNoContext} />
+                <h3 className="text-base font-semibold text-zinc-800">
+                  No Context Bot
+                </h3>
+                <p className="inline-flex items-center gap-0.5 text-sm font-medium leading-none text-zinc-500 transition group-hover:text-teal-500">
+                  <span>nocontextbot.com</span>
+                  <ExternalLink className="ml-0.5 h-3 w-3 shrink-0" />
+                </p>
+              </div>
+              <p className="relative z-10 mt-2 text-sm text-zinc-600">
+                A Slack bot that turns out-of-context quotes into AI-generated artwork.
+              </p>
+            </Link>
+          </li>
+        </FadeIn>
+
+        {/* Mojo Score Keeper */}
+        <FadeIn delay={200}>
           <li className="group relative flex flex-col items-start">
             <div className="relative z-10 flex items-start gap-3">
               <ProjectLogo src={logoMojo} />
@@ -136,7 +164,7 @@ export function Projects() {
         </FadeIn>
 
         {/* DIYProject.ai */}
-        <FadeIn delay={200}>
+        <FadeIn delay={300}>
           <li className="group relative flex flex-col items-start cursor-pointer">
             <Link
               href="https://diyproject.ai"
@@ -163,7 +191,7 @@ export function Projects() {
         </FadeIn>
 
         {/* Parra */}
-        <FadeIn delay={300}>
+        <FadeIn delay={400}>
           <li className="group relative flex flex-col items-start cursor-pointer">
             <Link
               href="https://parra.io"
