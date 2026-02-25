@@ -15,6 +15,7 @@ import chromeIcon from '@/images/chrome.png'
 import safariIcon from '@/images/safari.png'
 import logoOnlyRecipes from '@/images/projects/only-recipes.png'
 import logoNoContext from '@/images/projects/no-context.svg'
+import logoCatIQ from '@/images/projects/cat-iq-test.png'
 
 function ProjectLogo({ src, bordered }: { src: typeof logoDiy; bordered?: boolean }) {
   return (
@@ -214,6 +215,38 @@ export function Projects() {
                 Everything you need to build apps.
               </p>
             </Link>
+          </li>
+        </FadeIn>
+
+        {/* Cat IQ Test */}
+        <FadeIn delay={500}>
+          <li className="group relative flex flex-col items-start">
+            <div className="relative z-10 flex items-start gap-3">
+              <ProjectLogo src={logoCatIQ} />
+              <div className="flex flex-col">
+                <h3 className="text-base font-semibold text-zinc-800">
+                  Cat IQ Test
+                </h3>
+              </div>
+            </div>
+            <p className="relative z-10 mt-2 text-sm text-zinc-600">
+              Find out how smart your cat really is with fun, interactive IQ tests.
+            </p>
+            <div className="relative z-10 mt-4">
+              <Link
+                href="https://apps.apple.com/us/app/cat-iq-test/id6759520249"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:opacity-80"
+              >
+                <Image
+                  src={downloadAppStore}
+                  alt="Download on the App Store"
+                  className="h-9 w-auto"
+                  unoptimized
+                />
+              </Link>
+            </div>
           </li>
         </FadeIn>
 
