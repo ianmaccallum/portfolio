@@ -14,6 +14,8 @@ import downloadAppStore from '@/images/download-app-store.svg'
 import chromeIcon from '@/images/chrome.png'
 import safariIcon from '@/images/safari.png'
 import logoOnlyRecipes from '@/images/projects/only-recipes.png'
+import logoCatIQ from '@/images/projects/cat-iq-test.png'
+import logoDogIQ from '@/images/projects/dog-iq-test.png'
 import logoNoContext from '@/images/projects/no-context.svg'
 
 function ProjectLogo({ src, bordered }: { src: typeof logoDiy; bordered?: boolean }) {
@@ -190,8 +192,74 @@ export function Projects() {
           </li>
         </FadeIn>
 
-        {/* Parra */}
+        {/* Cat IQ Test */}
         <FadeIn delay={400}>
+          <li className="group relative flex flex-col items-start">
+            <div className="relative z-10 flex items-start gap-3">
+              <ProjectLogo src={logoCatIQ} />
+              <div className="flex flex-col">
+                <h3 className="text-base font-semibold text-zinc-800">
+                  Cat IQ Test
+                </h3>
+              </div>
+            </div>
+            <p className="relative z-10 mt-2 text-sm text-zinc-600">
+              20 science-based quiz questions, AI breed detection, and an
+              official IQ certificate for your cat.
+            </p>
+            <div className="relative z-10 mt-4">
+              <Link
+                href="https://apps.apple.com/app/id6759520249"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:opacity-80"
+              >
+                <Image
+                  src={downloadAppStore}
+                  alt="Download on the App Store"
+                  className="h-9 w-auto"
+                  unoptimized
+                />
+              </Link>
+            </div>
+          </li>
+        </FadeIn>
+
+        {/* Dog IQ Test */}
+        <FadeIn delay={500}>
+          <li className="group relative flex flex-col items-start">
+            <div className="relative z-10 flex items-start gap-3">
+              <ProjectLogo src={logoDogIQ} />
+              <div className="flex flex-col">
+                <h3 className="text-base font-semibold text-zinc-800">
+                  Dog IQ Test
+                </h3>
+              </div>
+            </div>
+            <p className="relative z-10 mt-2 text-sm text-zinc-600">
+              20 science-based quiz questions, AI breed detection, and an
+              official IQ certificate for your dog.
+            </p>
+            <div className="relative z-10 mt-4">
+              <Link
+                href="https://apps.apple.com/app/id6759539103"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:opacity-80"
+              >
+                <Image
+                  src={downloadAppStore}
+                  alt="Download on the App Store"
+                  className="h-9 w-auto"
+                  unoptimized
+                />
+              </Link>
+            </div>
+          </li>
+        </FadeIn>
+
+        {/* Parra */}
+        <FadeIn delay={600}>
           <li className="group relative flex flex-col items-start cursor-pointer">
             <Link
               href="https://parra.io"
