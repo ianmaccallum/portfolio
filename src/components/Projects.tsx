@@ -17,6 +17,12 @@ import logoOnlyRecipes from '@/images/projects/only-recipes.png'
 import logoCatIQ from '@/images/projects/cat-iq-test.png'
 import logoDogIQ from '@/images/projects/dog-iq-test.png'
 import logoNoContext from '@/images/projects/no-context.svg'
+import logoThoughtful from '@/images/projects/thoughtful.png'
+import logoEncore from '@/images/projects/encore.svg'
+import logoClaudeDrops from '@/images/projects/claude-drops.png'
+import logoTaxDays from '@/images/projects/tax-days.png'
+import logoStartupIdeas from '@/images/projects/startup-ideas.png'
+import logoGirlMath from '@/images/projects/girl-math.png'
 
 function ProjectLogo({ src, bordered }: { src: typeof logoDiy; bordered?: boolean }) {
   return (
@@ -64,8 +70,197 @@ export function Projects() {
         role="list"
         className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:max-w-5xl"
       >
-        {/* Only Recipes */}
+        {/* Thoughtful */}
         <FadeIn>
+          <li className="group relative flex flex-col items-start cursor-pointer">
+            <Link
+              href="https://thoughtful.app"
+              className="contents"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="absolute -inset-4 z-0 scale-95 rounded-2xl bg-zinc-50 opacity-0 transition-all duration-300 ease-out group-hover:scale-100 group-hover:opacity-100 sm:-inset-6" />
+              <div className="relative z-10 flex items-center gap-3">
+                <ProjectLogo src={logoThoughtful} bordered />
+                <h3 className="text-base font-semibold text-zinc-800">
+                  Thoughtful
+                </h3>
+                <p className="inline-flex items-center gap-0.5 text-sm font-medium leading-none text-zinc-500 transition group-hover:text-teal-500">
+                  <span>thoughtful.app</span>
+                  <ExternalLink className="ml-0.5 h-3 w-3 shrink-0" />
+                </p>
+              </div>
+              <p className="relative z-10 mt-2 text-sm text-zinc-600">
+                AI-powered greeting cards for the people you care about.
+              </p>
+            </Link>
+            <div className="relative z-10 mt-4">
+              <Link
+                href="https://apps.apple.com/app/id6762098726"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:opacity-80"
+              >
+                <Image
+                  src={downloadAppStore}
+                  alt="Download on the App Store"
+                  className="h-9 w-auto"
+                  unoptimized
+                />
+              </Link>
+            </div>
+          </li>
+        </FadeIn>
+
+        {/* Encore */}
+        <FadeIn delay={50}>
+          <li className="group relative flex flex-col items-start cursor-pointer">
+            <Link
+              href="https://encorelivemusic.app"
+              className="contents"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="absolute -inset-4 z-0 scale-95 rounded-2xl bg-zinc-50 opacity-0 transition-all duration-300 ease-out group-hover:scale-100 group-hover:opacity-100 sm:-inset-6" />
+              <div className="relative z-10 flex items-center gap-3">
+                <ProjectLogo src={logoEncore} />
+                <h3 className="text-base font-semibold text-zinc-800">
+                  Encore
+                </h3>
+                <p className="inline-flex items-center gap-0.5 text-sm font-medium leading-none text-zinc-500 transition group-hover:text-teal-500">
+                  <span>encorelivemusic.app</span>
+                  <ExternalLink className="ml-0.5 h-3 w-3 shrink-0" />
+                </p>
+              </div>
+              <p className="relative z-10 mt-2 text-sm text-zinc-600">
+                A printable link-in-bio for live musicians — tips, song requests, and feedback in one QR.
+              </p>
+            </Link>
+          </li>
+        </FadeIn>
+
+        {/* Claude Drops */}
+        <FadeIn delay={100}>
+          <li className="group relative flex flex-col items-start">
+            <div className="relative z-10 flex items-center gap-3">
+              <ProjectLogo src={logoClaudeDrops} />
+              <h3 className="text-base font-semibold text-zinc-800">
+                Claude Drops
+              </h3>
+            </div>
+            <p className="relative z-10 mt-2 text-sm text-zinc-600">
+              Never miss a Claude Code release — changelog, notifications, and widgets.
+            </p>
+            <div className="relative z-10 mt-4">
+              <Link
+                href="https://apps.apple.com/app/id6760681118"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:opacity-80"
+              >
+                <Image
+                  src={downloadAppStore}
+                  alt="Download on the App Store"
+                  className="h-9 w-auto"
+                  unoptimized
+                />
+              </Link>
+            </div>
+          </li>
+        </FadeIn>
+
+        {/* Tax Days */}
+        <FadeIn delay={150}>
+          <li className="group relative flex flex-col items-start">
+            <div className="relative z-10 flex items-center gap-3">
+              <ProjectLogo src={logoTaxDays} />
+              <h3 className="text-base font-semibold text-zinc-800">
+                Tax Days
+              </h3>
+            </div>
+            <p className="relative z-10 mt-2 text-sm text-zinc-600">
+              Tax residency tracker — US federal, state, Schengen 90/180, and the UK SRT in one app.
+            </p>
+            <div className="relative z-10 mt-4">
+              <Link
+                href="https://apps.apple.com/app/id6761441335"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:opacity-80"
+              >
+                <Image
+                  src={downloadAppStore}
+                  alt="Download on the App Store"
+                  className="h-9 w-auto"
+                  unoptimized
+                />
+              </Link>
+            </div>
+          </li>
+        </FadeIn>
+
+        {/* Startup Ideas */}
+        <FadeIn delay={200}>
+          <li className="group relative flex flex-col items-start">
+            <div className="relative z-10 flex items-center gap-3">
+              <ProjectLogo src={logoStartupIdeas} />
+              <h3 className="text-base font-semibold text-zinc-800">
+                Ideas
+              </h3>
+            </div>
+            <p className="relative z-10 mt-2 text-sm text-zinc-600">
+              A simple, beautiful place to capture every startup idea before it slips away.
+            </p>
+            <div className="relative z-10 mt-4">
+              <Link
+                href="https://apps.apple.com/app/id6761696994"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:opacity-80"
+              >
+                <Image
+                  src={downloadAppStore}
+                  alt="Download on the App Store"
+                  className="h-9 w-auto"
+                  unoptimized
+                />
+              </Link>
+            </div>
+          </li>
+        </FadeIn>
+
+        {/* Girl Math */}
+        <FadeIn delay={250}>
+          <li className="group relative flex flex-col items-start">
+            <div className="relative z-10 flex items-center gap-3">
+              <ProjectLogo src={logoGirlMath} />
+              <h3 className="text-base font-semibold text-zinc-800">
+                Girl Math
+              </h3>
+            </div>
+            <p className="relative z-10 mt-2 text-sm text-zinc-600">
+              Track returns and unused purchases — never lose money to a forgotten receipt again.
+            </p>
+            <div className="relative z-10 mt-4">
+              <Link
+                href="https://apps.apple.com/app/id6761315341"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:opacity-80"
+              >
+                <Image
+                  src={downloadAppStore}
+                  alt="Download on the App Store"
+                  className="h-9 w-auto"
+                  unoptimized
+                />
+              </Link>
+            </div>
+          </li>
+        </FadeIn>
+
+        {/* Only Recipes */}
+        <FadeIn delay={300}>
           <li className="group relative flex flex-col items-start cursor-pointer">
             <Link
               href="https://onlyrecipes.app"
@@ -107,7 +302,7 @@ export function Projects() {
         </FadeIn>
 
         {/* No Context Bot */}
-        <FadeIn delay={100}>
+        <FadeIn delay={350}>
           <li className="group relative flex flex-col items-start cursor-pointer">
             <Link
               href="https://nocontextbot.com"
@@ -134,9 +329,9 @@ export function Projects() {
         </FadeIn>
 
         {/* Mojo Score Keeper */}
-        <FadeIn delay={200}>
+        <FadeIn delay={400}>
           <li className="group relative flex flex-col items-start">
-            <div className="relative z-10 flex items-start gap-3">
+            <div className="relative z-10 flex items-center gap-3">
               <ProjectLogo src={logoMojo} />
               <div className="flex flex-col">
                 <h3 className="text-base font-semibold text-zinc-800">
@@ -166,7 +361,7 @@ export function Projects() {
         </FadeIn>
 
         {/* DIYProject.ai */}
-        <FadeIn delay={300}>
+        <FadeIn delay={450}>
           <li className="group relative flex flex-col items-start cursor-pointer">
             <Link
               href="https://diyproject.ai"
@@ -193,9 +388,9 @@ export function Projects() {
         </FadeIn>
 
         {/* Cat IQ Test */}
-        <FadeIn delay={400}>
+        <FadeIn delay={500}>
           <li className="group relative flex flex-col items-start">
-            <div className="relative z-10 flex items-start gap-3">
+            <div className="relative z-10 flex items-center gap-3">
               <ProjectLogo src={logoCatIQ} />
               <div className="flex flex-col">
                 <h3 className="text-base font-semibold text-zinc-800">
@@ -204,8 +399,8 @@ export function Projects() {
               </div>
             </div>
             <p className="relative z-10 mt-2 text-sm text-zinc-600">
-              20 science-based quiz questions, AI breed detection, and an
-              official IQ certificate for your cat.
+              Silly app to quiz your cat's intelligence and generate an
+              official IQ certificate.
             </p>
             <div className="relative z-10 mt-4">
               <Link
@@ -226,9 +421,9 @@ export function Projects() {
         </FadeIn>
 
         {/* Dog IQ Test */}
-        <FadeIn delay={500}>
+        <FadeIn delay={550}>
           <li className="group relative flex flex-col items-start">
-            <div className="relative z-10 flex items-start gap-3">
+            <div className="relative z-10 flex items-center gap-3">
               <ProjectLogo src={logoDogIQ} />
               <div className="flex flex-col">
                 <h3 className="text-base font-semibold text-zinc-800">
@@ -237,8 +432,8 @@ export function Projects() {
               </div>
             </div>
             <p className="relative z-10 mt-2 text-sm text-zinc-600">
-              20 science-based quiz questions, AI breed detection, and an
-              official IQ certificate for your dog.
+              Silly app to quiz your dog's intelligence and generate an
+              official IQ certificate.
             </p>
             <div className="relative z-10 mt-4">
               <Link
