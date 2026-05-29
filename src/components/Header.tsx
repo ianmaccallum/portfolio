@@ -43,6 +43,24 @@ function SmallAvatar() {
   )
 }
 
+function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+  const pathname = usePathname()
+  const isActive = pathname === href
+
+  return (
+    <Link
+      href={href}
+      className={`text-sm font-medium transition pointer-events-auto ${
+        isActive
+          ? 'text-zinc-900'
+          : 'text-zinc-600 hover:text-zinc-900'
+      }`}
+    >
+      {children}
+    </Link>
+  )
+}
+
 export function Header() {
   const isHomePage = usePathname() === '/'
   const [avatarScale, setAvatarScale] = useState(1)
@@ -90,7 +108,13 @@ export function Header() {
       )}
       {!isHomePage && (
         <Container className="mt-6">
-          <SmallAvatar />
+          <div className="flex items-center justify-between">
+            <SmallAvatar />
+            <nav className="flex gap-6">
+              <NavLink href="/">Home</NavLink>
+              <NavLink href="/apps">Apps</NavLink>
+            </nav>
+          </div>
         </Container>
       )}
     </header>

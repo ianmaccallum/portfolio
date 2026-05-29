@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="pinkBg" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#F2A8C0"/>
+      <stop offset="40%" stop-color="#E8749A"/>
+      <stop offset="100%" stop-color="#D4637F"/>
+    </linearGradient>
+    <radialGradient id="shinePink" cx="0.3" cy="0.15" r="0.8">
+      <stop offset="0%" stop-color="white" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="shineWhite" cx="0.3" cy="0.15" r="0.8">
+      <stop offset="0%" stop-color="#E8749A" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#E8749A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ===== FULL PINK BACKGROUND ===== -->
+  <rect width="512" height="512" fill="url(#pinkBg)"/>
+  <rect width="512" height="512" fill="url(#shinePink)"/>
+
+  <!-- White quadrants with icon cutouts (masks) -->
+  <!-- Top-right: white with plus cut out -->
+  <mask id="maskPlus">
+    <rect x="256" y="0" width="256" height="256" fill="white"/>
+    <g transform="translate(288, 32) scale(8)" stroke="black" stroke-linecap="round" fill="none">
+      <path d="M5 12h14" stroke-width="3"/>
+      <path d="M12 5v14" stroke-width="3"/>
+    </g>
+  </mask>
+  <rect x="256" y="0" width="256" height="256" fill="white" mask="url(#maskPlus)"/>
+
+  <!-- Bottom-left: white with arrow cut out -->
+  <mask id="maskArrow">
+    <rect x="0" y="256" width="256" height="256" fill="white"/>
+    <g transform="translate(32, 288) scale(8)" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M12 19l-7-7 7-7" stroke-width="3"/>
+      <path d="M19 12H5" stroke-width="3"/>
+    </g>
+  </mask>
+  <rect x="0" y="256" width="256" height="256" fill="white" mask="url(#maskArrow)"/>
+
+  <!-- ===== SPARKLES ===== -->
+  <g fill="white" opacity="0.2">
+    <path d="M40,40 l2,-7 2,7 7,2 -7,2 -2,7 -2,-7 -7,-2z"/>
+    <path d="M200,20 l1.5,-5 1.5,5 5,1.5 -5,1.5 -1.5,5 -1.5,-5 -5,-1.5z"/>
+    <path d="M220,200 l2,-6 2,6 6,2 -6,2 -2,6 -2,-6 -6,-2z"/>
+    <path d="M470,290 l2,-7 2,7 7,2 -7,2 -2,7 -2,-7 -7,-2z"/>
+    <path d="M300,470 l1.5,-5 1.5,5 5,1.5 -5,1.5 -1.5,5 -1.5,-5 -5,-1.5z"/>
+    <path d="M480,480 l2,-6 2,6 6,2 -6,2 -2,6 -2,-6 -6,-2z"/>
+  </g>
+  <g fill="#E8749A" opacity="0.15">
+    <path d="M290,40 l2,-7 2,7 7,2 -7,2 -2,7 -2,-7 -7,-2z"/>
+    <path d="M470,200 l1.5,-5 1.5,5 5,1.5 -5,1.5 -1.5,5 -1.5,-5 -5,-1.5z"/>
+    <path d="M40,290 l2,-7 2,7 7,2 -7,2 -2,7 -2,-7 -7,-2z"/>
+    <path d="M200,470 l1.5,-5 1.5,5 5,1.5 -5,1.5 -1.5,5 -1.5,-5 -5,-1.5z"/>
+    <path d="M220,440 l2,-6 2,6 6,2 -6,2 -2,6 -2,-6 -6,-2z"/>
+  </g>
+
+  <!-- Bubbly circles -->
+  <circle cx="210" cy="50" r="15" fill="white" opacity="0.08"/>
+  <circle cx="50" cy="210" r="10" fill="white" opacity="0.06"/>
+  <circle cx="460" cy="460" r="15" fill="white" opacity="0.08"/>
+  <circle cx="300" cy="300" r="10" fill="white" opacity="0.06"/>
+  <circle cx="460" cy="50" r="15" fill="#E8749A" opacity="0.06"/>
+  <circle cx="300" cy="210" r="10" fill="#E8749A" opacity="0.04"/>
+  <circle cx="50" cy="460" r="15" fill="#E8749A" opacity="0.06"/>
+  <circle cx="210" cy="300" r="10" fill="#E8749A" opacity="0.04"/>
+
+  <!-- ===== ICONS (centered in each 256x256 quadrant) ===== -->
+  <!-- scale(8) = 192px icon, offset = (256-192)/2 = 32 from quadrant edge -->
+
+  <!-- Top-left (pink bg): Jeans — filled WHITE (Game Icons trousers, 512 viewbox) -->
+  <g transform="translate(32, 32) scale(0.375)">
+    <path d="M250.45 19.767c-44.556.187-87.24 7.376-118.562 21c-16.176 147.458-32.792 298.827-46.72 425.75l123.344 24.814l34.157-262.844h20.63l34.25 263.75h.218l129.063-26.28c-15.71-141.714-31.023-283.473-46.724-425.19c-38.697-14.307-85.098-21.17-129.655-21z"
+          fill="white"/>
+  </g>
+
+  <!-- Plus and arrow are masked cutouts in the white quadrants above -->
+
+  <!-- Bottom-right (pink bg): Money-back (dollarsign.arrow.trianglehead.counterclockwise.rotate.90) — WHITE -->
+  <g transform="translate(288, 304) scale(8)" fill="white">
+    <path d="M0.694677 8.07617C-0.00844799 8.07617-0.184229 8.55469 0.19663 9.10156L2.38413 12.207C2.7064 12.6562 3.17515 12.6465 3.48765 12.207L5.66538 9.0918C6.04624 8.55469 5.86069 8.07617 5.1771 8.07617ZM21.8177 9.96094C21.8177 4.46289 17.3548 0 11.8568 0C6.35874 0 1.90561 4.45312 1.89585 9.9707C1.90561 10.4297 2.26694 10.791 2.71616 10.791C3.17515 10.791 3.55601 10.4199 3.55601 9.96094C3.55601 5.37109 7.26694 1.66016 11.8568 1.66016C16.4466 1.66016 20.1576 5.37109 20.1576 9.96094C20.1576 14.5508 16.4466 18.2617 11.8568 18.2617C9.07358 18.2617 6.62241 16.8945 5.13804 14.8242C4.8353 14.4238 4.37632 14.2969 3.96616 14.541C3.57554 14.7852 3.45835 15.3418 3.79038 15.7715C5.60679 18.291 8.50718 19.9219 11.8568 19.9219C17.3548 19.9219 21.8177 15.459 21.8177 9.96094Z"/>
+    <path d="M11.8666 14.2285C13.5267 14.2285 14.9916 13.457 14.9916 11.7773C14.9916 10.3125 13.8099 9.74609 12.4818 9.43359L11.5443 9.20898C10.6947 9.01367 9.97202 8.65234 9.97202 7.86133C9.97202 6.93359 10.9681 6.51367 11.8666 6.51367C12.8431 6.51367 13.5072 6.93359 13.7708 7.75391C13.8685 8.04688 14.0541 8.19336 14.3177 8.19336C14.5619 8.19336 14.8451 8.03711 14.8451 7.69531C14.8451 6.44531 13.2435 5.55664 11.8666 5.55664C10.3041 5.55664 8.87827 6.43555 8.87827 7.93945C8.87827 9.39453 10.099 9.95117 11.3001 10.2344L12.2376 10.459C13.1068 10.6641 13.9076 10.9766 13.9076 11.8652C13.9076 12.9395 12.8822 13.2715 11.8958 13.2715C10.8607 13.2715 10.138 12.9297 9.78647 11.9922C9.66929 11.6992 9.50327 11.5723 9.2396 11.5723C8.9564 11.5723 8.72202 11.7676 8.72202 12.0801C8.72202 12.1777 8.74155 12.2754 8.78061 12.3926C9.15171 13.6816 10.5873 14.2285 11.8666 14.2285ZM11.8568 15.3906C12.0326 15.3906 12.1791 15.2441 12.1791 15.0684L12.1791 4.73633C12.1791 4.56055 12.0326 4.41406 11.8568 4.41406C11.681 4.41406 11.5345 4.56055 11.5345 4.73633L11.5345 15.0684C11.5345 15.2441 11.681 15.3906 11.8568 15.3906Z"/>
+  </g>
+</svg>
