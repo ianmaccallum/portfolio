@@ -6,16 +6,27 @@ import { FadeIn } from '@/components/FadeIn'
 import downloadAppStore from '@/images/download-app-store.svg'
 
 // Import app icons
+import logoOnlyRecipes from '@/images/projects/only-recipes.png'
+import logoTaxDays from '@/images/projects/tax-days.png'
+import logoDIY from '@/images/projects/diy.png'
+import logoGLPDone from '@/images/projects/glp-done.png'
 import logoThoughtful from '@/images/projects/thoughtful.png'
 import logoClaudeDrops from '@/images/projects/claude-drops.png'
-import logoTaxDays from '@/images/projects/tax-days.png'
-import logoStartupIdeas from '@/images/projects/startup-ideas.png'
+import logoSlashCards from '@/images/projects/slash-cards.png'
+import logoSkimmer from '@/images/projects/skimmer.png'
+import logoSkipper from '@/images/projects/skipper.png'
+import logoCarNotes from '@/images/projects/car-notes.png'
+import logoPlastik from '@/images/projects/plastik.png'
 import logoGirlMath from '@/images/projects/girl-math.png'
-import logoOnlyRecipes from '@/images/projects/only-recipes.png'
+import logoIdeas from '@/images/projects/ideas.png'
+import logoNotiFi from '@/images/projects/notifi.png'
+import logoNoContext from '@/images/projects/no-context.svg'
+import logoY2K38 from '@/images/projects/y2k38.png'
 import logoCatIQ from '@/images/projects/cat-iq-test.png'
 import logoDogIQ from '@/images/projects/dog-iq-test.png'
-import logoMojo from '@/images/projects/mojo.png'
-import logoGardenFriends from '@/images/projects/garden-friends.png'
+import logoPwd from '@/images/projects/pwd.png'
+import logoDateTime from '@/images/projects/datetime.png'
+import logoRiemannSums from '@/images/projects/riemann-sums.png'
 
 type App = {
   name: string
@@ -25,68 +36,140 @@ type App = {
   websiteUrl?: string
 }
 
+/**
+ * Every app here is live: shipped on the App Store, or a live web product.
+ * App IDs come from App Store Connect; ordering mirrors parra.io.
+ */
 const APPS: App[] = [
   {
-    name: 'Thoughtful',
-    icon: logoThoughtful,
-    description: 'AI-powered greeting cards for the people you care about.',
-    appStoreUrl: 'https://apps.apple.com/app/id6762098726',
-    websiteUrl: 'https://thoughtful.app',
+    name: 'Only Recipes',
+    icon: logoOnlyRecipes,
+    description: 'Instantly extract just the recipe from any website, with one click.',
+    appStoreUrl: 'https://apps.apple.com/us/app/only-recipes-recipe-keeper/id1553858589',
+    websiteUrl: 'https://onlyrecipes.app',
   },
   {
     name: 'Tax Days',
     icon: logoTaxDays,
-    description: 'Tax residency tracker — US federal, state, Schengen 90/180, and the UK SRT in one app.',
-    appStoreUrl: 'https://apps.apple.com/app/id6761441335',
+    description: 'Track tax residency days against US federal, state, and international rules.',
+    appStoreUrl: 'https://apps.apple.com/us/app/tax-days-residency-tracker/id6761441335',
+    websiteUrl: 'https://taxdaysresidencytracker.com',
   },
   {
-    name: 'Garden Friends',
-    icon: logoGardenFriends,
-    description: 'Discover, identify, taste, track, and build boards for wines and cocktails.',
-    appStoreUrl: 'https://apps.apple.com/app/id6765847221',
+    name: 'DIYProject.ai',
+    icon: logoDIY,
+    description: 'AI-powered project planner and home maintenance tracker.',
+    websiteUrl: 'https://diyproject.ai',
   },
   {
-    name: 'Ideas',
-    icon: logoStartupIdeas,
-    description: 'A simple, beautiful place to capture every startup idea before it slips away.',
-    appStoreUrl: 'https://apps.apple.com/app/id6761696994',
+    name: 'GLP-Done',
+    icon: logoGLPDone,
+    description: 'Keep the weight off after GLP-1. Private, on-device maintenance coaching.',
+    appStoreUrl: 'https://apps.apple.com/us/app/glp-done-keep-it-off/id6785238079',
+    websiteUrl: 'https://glp-done.com',
+  },
+  {
+    name: 'Thoughtful',
+    icon: logoThoughtful,
+    description: 'Never miss a birthday. Gift ideas, occasions, and the people who matter.',
+    appStoreUrl: 'https://apps.apple.com/us/app/thoughtful-grow-relationships/id6762098726',
+    websiteUrl: 'https://thoughtful.app',
+  },
+  {
+    name: 'Drops for Claude Code',
+    icon: logoClaudeDrops,
+    description: 'Every Claude Code release, explained. Never miss a new feature.',
+    appStoreUrl: 'https://apps.apple.com/us/app/drops-for-claude-code/id6760681118',
+  },
+  {
+    name: '/cards for Claude Code',
+    icon: logoSlashCards,
+    description: 'Flashcards for Claude Code commands, hooks, and config.',
+    appStoreUrl: 'https://apps.apple.com/us/app/cards-for-claude-code/id6770581039',
+  },
+  {
+    name: 'Skimmer',
+    icon: logoSkimmer,
+    description: 'Pool care log for water chemistry, equipment, and service history.',
+    appStoreUrl: 'https://apps.apple.com/us/app/skimmer-pool-care-log/id6775022955',
+  },
+  {
+    name: 'Skipper',
+    icon: logoSkipper,
+    description: 'Boat maintenance log with engine hours and resale-ready PDF reports.',
+    appStoreUrl: 'https://apps.apple.com/us/app/skipper-boat-maintenance-log/id6770317576',
+  },
+  {
+    name: 'Car Notes',
+    icon: logoCarNotes,
+    description: 'Voice-first notes for drivers. Capture a thought, hands on the wheel.',
+    appStoreUrl: 'https://apps.apple.com/us/app/car-notes-voice-memos/id6770357166',
+  },
+  {
+    name: 'Plastik',
+    icon: logoPlastik,
+    description: 'Every loyalty and membership barcode, organized in one wallet.',
+    appStoreUrl: 'https://apps.apple.com/us/app/plastik-barcode-card-wallet/id6765938401',
   },
   {
     name: 'Girl Math',
     icon: logoGirlMath,
-    description: 'Track returns and unused purchases — never lose money to a forgotten receipt again.',
-    appStoreUrl: 'https://apps.apple.com/app/id6761315341',
+    description: 'Track returns, deadlines, and refunds so you never eat the cost.',
+    appStoreUrl: 'https://apps.apple.com/us/app/girl-math-return-tracker/id6761315341',
   },
   {
-    name: 'Only Recipes',
-    icon: logoOnlyRecipes,
-    description: 'Instantly extract just the recipe — from any website, with one click.',
-    appStoreUrl: 'https://apps.apple.com/us/app/only-recipes/id1553858589',
-    websiteUrl: 'https://onlyrecipes.app',
+    name: 'Ideas',
+    icon: logoIdeas,
+    description: 'Capture startup ideas the moment they hit, then grow the good ones.',
+    appStoreUrl: 'https://apps.apple.com/us/app/ideas-simple-idea-tracker/id6761696994',
+  },
+  {
+    name: 'NotiFi',
+    icon: logoNotiFi,
+    description: 'Get alerted the moment UniFi gear is back in stock.',
+    appStoreUrl: 'https://apps.apple.com/us/app/notifi-stock-alerts-for-unifi/id6771999708',
+  },
+  {
+    name: 'No Context Bot',
+    icon: logoNoContext,
+    description: 'A Slack bot that turns out-of-context quotes into AI-generated art.',
+    websiteUrl: 'https://nocontextbot.com',
+  },
+  {
+    name: 'Y2K38',
+    icon: logoY2K38,
+    description: 'A doomsday clock counting down to the 32-bit epoch overflow.',
+    appStoreUrl: 'https://apps.apple.com/us/app/y2k38-doomsday-clock/id6762413449',
   },
   {
     name: 'Cat IQ Test',
     icon: logoCatIQ,
-    description: 'Silly app to quiz your cat\'s intelligence and generate an official IQ certificate.',
-    appStoreUrl: 'https://apps.apple.com/app/id6759520249',
+    description: 'Quiz your cat, then print the official certificate of genius.',
+    appStoreUrl: 'https://apps.apple.com/us/app/cat-iq-test/id6759520249',
   },
   {
     name: 'Dog IQ Test',
     icon: logoDogIQ,
-    description: 'Silly app to quiz your dog\'s intelligence and generate an official IQ certificate.',
-    appStoreUrl: 'https://apps.apple.com/app/id6759539103',
+    description: 'Quiz your dog, then print the official certificate of genius.',
+    appStoreUrl: 'https://apps.apple.com/us/app/dog-iq-test-pup-quiz/id6759539103',
   },
   {
-    name: 'Claude Drops',
-    icon: logoClaudeDrops,
-    description: 'Never miss a Claude Code release — changelog, notifications, and widgets.',
-    appStoreUrl: 'https://apps.apple.com/app/id6760681118',
+    name: 'pwd',
+    icon: logoPwd,
+    description: 'Strong, memorable passwords generated on device.',
+    appStoreUrl: 'https://apps.apple.com/us/app/pwd-password-generator/id1508070176',
   },
   {
-    name: 'Mojo Score Keeper',
-    icon: logoMojo,
-    description: 'Clean, intuitive score keeper for the card game Mojo.',
-    appStoreUrl: 'https://apps.apple.com/us/app/mojo-score-keeper/id6749283633',
+    name: 'DateTime',
+    icon: logoDateTime,
+    description: 'A quick reference for every date format a developer needs.',
+    appStoreUrl: 'https://apps.apple.com/us/app/datetime-date-formatter/id1510255768',
+  },
+  {
+    name: 'Riemann Sums',
+    icon: logoRiemannSums,
+    description: 'Visualize and calculate Riemann sums for any function.',
+    appStoreUrl: 'https://apps.apple.com/us/app/riemann-sums-calculator/id1508062942',
   },
 ]
 
