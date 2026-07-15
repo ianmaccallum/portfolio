@@ -5,16 +5,12 @@ import { Photos } from '@/components/Photos'
 import { Projects } from '@/components/Projects'
 import { Resume } from '@/components/Resume'
 import { ResumeDownload } from '@/components/ResumeDownload'
-import { Testimonials } from '@/components/Testimonials'
-import { Newsletter } from '@/components/Newsletter'
-import { ContactCTA } from '@/components/ContactCTA'
 
 export default function Home() {
   return (
     <>
       <Hero />
       <Projects />
-      <Testimonials />
       <Photos />
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
@@ -27,8 +23,6 @@ export default function Home() {
           </div>
         </div>
       </Container>
-      <Newsletter />
-      <ContactCTA />
     </>
   )
 }
