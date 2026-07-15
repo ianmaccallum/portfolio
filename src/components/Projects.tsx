@@ -39,6 +39,8 @@ const featuredProjects: Project[] = [
   {
     name: 'Tax Days',
     logo: logoTaxDays,
+    website: 'taxdaysresidencytracker.com',
+    websiteUrl: 'https://taxdaysresidencytracker.com',
     description:
       'Tax residency tracker — US federal, state, Schengen 90/180, and the UK SRT in one app.',
     appStoreUrl: 'https://apps.apple.com/app/id6761441335',
