@@ -7,14 +7,12 @@ import { Resume } from '@/components/Resume'
 import { ResumeDownload } from '@/components/ResumeDownload'
 import { Testimonials } from '@/components/Testimonials'
 import { Newsletter } from '@/components/Newsletter'
-import { CurrentlyWorkingOn } from '@/components/CurrentlyWorkingOn'
 import { ContactCTA } from '@/components/ContactCTA'
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <CurrentlyWorkingOn />
       <Projects />
       <Testimonials />
       <Photos />
