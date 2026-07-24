@@ -1,8 +1,6 @@
 import { type Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
-import { Analytics } from '@vercel/analytics/next'
-
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
 import { name, siteUrl, description } from '@/lib/info'
@@ -69,7 +67,6 @@ export default function RootLayout({
             <Layout>{children}</Layout>
           </div>
         </Providers>
-        <Analytics />
       </body>
     </html>
   )
