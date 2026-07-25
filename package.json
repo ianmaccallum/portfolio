@@ -15,7 +15,8 @@
     "preview": "opennextjs-cloudflare preview",
     "deploy": "opennextjs-cloudflare build && wrangler deploy",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "indexnow": "node scripts/indexnow-submit.mjs"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
