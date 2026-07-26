@@ -1,0 +1,28 @@
+// Cloudflare Workers config for the portfolio site (OpenNext).
+//
+// Fully static Next.js app: no queues, KV, Hyperdrive, cron, or email, so there
+// are no runtime secrets and no custom worker entrypoint — wrangler serves the
+// OpenNext-generated worker directly. Deployed by .github/workflows/deploy.yml.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Resource naming convention: <project>-<app>-<environment>.
+  "name": "portfolio-web-production",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-12-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  // Serve on the *.workers.dev URL until the custom domain is cut over. To go
+  // live on ian.maccallum.dev: delegate the zone to Cloudflare, then add
+  //   "routes": [{ "pattern": "ian.maccallum.dev", "custom_domain": true }]
+  // and flip "workers_dev" to false. (No CLI path for domain attachment; it's a
+  // dashboard step — Workers > this worker > Settings > Domains & Routes.)
+  "workers_dev": true,
+  // Workers Logs at 100% sampling so production logs/metrics are queryable.
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  }
+}

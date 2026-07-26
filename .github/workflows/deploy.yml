@@ -1,0 +1,65 @@
+# Deploys the portfolio site to Cloudflare Workers (OpenNext).
+#
+# Fully static site: no runtime secrets, no stateful resources to provision.
+# Auth needs an org-or-repo CLOUDFLARE_API_TOKEN secret (Workers Scripts:Edit)
+# and a CLOUDFLARE_ACCOUNT_ID variable. This repo is under a personal org, so
+# both must be set on the repo itself (Parra-Inc repos inherit them org-wide).
+
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Build and deploy to Cloudflare
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Restore turbo cache
+        uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: turbo-${{ runner.os }}-${{ github.sha }}
+          restore-keys: |
+            turbo-${{ runner.os }}-
+
+      - name: Build (Next.js + OpenNext via turbo)
+        run: pnpm exec turbo run build:cf
+
+      # Capture the sitemap that is live *before* this deploy so the step after
+      # it can tell which URLs this deploy actually adds or removes.
+      - name: Snapshot live sitemap (IndexNow baseline)
+        continue-on-error: true
+        run: node scripts/indexnow-submit.mjs --snapshot "$RUNNER_TEMP/indexnow-baseline.xml"
+
+      - name: Deploy worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+        run: pnpm exec wrangler deploy
+
+      # Submits only the added/removed URLs, never the full sitemap. No-ops when
+      # nothing changed, when no baseline was captured, or when the key file
+      # isn't served on the live host yet. continue-on-error so an indexing ping
+      # can never fail a deploy.
+      - name: Submit changed URLs to IndexNow
+        continue-on-error: true
+        run: node scripts/indexnow-submit.mjs --diff "$RUNNER_TEMP/indexnow-baseline.xml"

@@ -1,7 +1,6 @@
 import { ImageResponse } from 'next/og'
-import { readFile } from 'node:fs/promises'
-import { join } from 'node:path'
 import { name, email, socialHandles } from '@/lib/info'
+import { avatarDataUri as avatarBase64 } from '@/lib/avatar'
 
 export const runtime = 'nodejs'
 export const alt = name
@@ -12,11 +11,6 @@ export const size = {
 export const contentType = 'image/png'
 
 export default async function Image() {
-  const avatarData = await readFile(
-    join(process.cwd(), 'src/images/avatar.png')
-  )
-  const avatarBase64 = `data:image/png;base64,${avatarData.toString('base64')}`
-
   return new ImageResponse(
     (
       <div
