@@ -7,7 +7,12 @@ import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 
 import { Container } from '@/components/Container'
-import avatarImage from '@/images/avatar.png'
+// 288px WebP (5 kB), not the 592px source PNG (379 kB): this renders in a 96px
+// box, loads eagerly in the header on every page, and this site deploys to
+// Cloudflare Workers via OpenNext, where /_next/image is a pass-through and
+// optimizes nothing. src/images/avatar.png stays as the master that
+// src/lib/avatar.ts inlines for the opengraph routes.
+import avatarImage from '@/images/avatar.webp'
 
 function Avatar({ scale = 1 }: { scale?: number }) {
   const size = 96 * scale

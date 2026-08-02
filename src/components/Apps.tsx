@@ -5,28 +5,33 @@ import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
 import downloadAppStore from '@/images/download-app-store.svg'
 
-// Import app icons
-import logoOnlyRecipes from '@/images/projects/only-recipes.png'
-import logoTaxDays from '@/images/projects/tax-days.png'
-import logoDIY from '@/images/projects/diy.png'
-import logoGLPDone from '@/images/projects/glp-done.png'
-import logoThoughtful from '@/images/projects/thoughtful.png'
-import logoClaudeDrops from '@/images/projects/claude-drops.png'
-import logoSlashCards from '@/images/projects/slash-cards.png'
-import logoSkimmer from '@/images/projects/skimmer.png'
-import logoSkipper from '@/images/projects/skipper.png'
-import logoCarNotes from '@/images/projects/car-notes.png'
-import logoPlastik from '@/images/projects/plastik.png'
-import logoGirlMath from '@/images/projects/girl-math.png'
-import logoIdeas from '@/images/projects/ideas.png'
-import logoNotiFi from '@/images/projects/notifi.png'
+// App icons, as 256px WebP rather than the 512/1024px PNG masters they were
+// exported from. AppIcon below draws them in a 64px box, and this site deploys
+// to Cloudflare Workers via OpenNext, where /_next/image is a pass-through that
+// re-serves the source untouched: `unoptimized` is honest about that, so the
+// file on disk is the file the browser gets. The PNGs were 2.7 MB across the
+// set and the WebPs are 87 kB. Re-export at 256px if you swap one in.
+import logoOnlyRecipes from '@/images/projects/only-recipes.webp'
+import logoTaxDays from '@/images/projects/tax-days.webp'
+import logoDIY from '@/images/projects/diy.webp'
+import logoGLPDone from '@/images/projects/glp-done.webp'
+import logoThoughtful from '@/images/projects/thoughtful.webp'
+import logoClaudeDrops from '@/images/projects/claude-drops.webp'
+import logoSlashCards from '@/images/projects/slash-cards.webp'
+import logoSkimmer from '@/images/projects/skimmer.webp'
+import logoSkipper from '@/images/projects/skipper.webp'
+import logoCarNotes from '@/images/projects/car-notes.webp'
+import logoPlastik from '@/images/projects/plastik.webp'
+import logoGirlMath from '@/images/projects/girl-math.webp'
+import logoIdeas from '@/images/projects/ideas.webp'
+import logoNotiFi from '@/images/projects/notifi.webp'
 import logoNoContext from '@/images/projects/no-context.svg'
-import logoY2K38 from '@/images/projects/y2k38.png'
-import logoCatIQ from '@/images/projects/cat-iq-test.png'
-import logoDogIQ from '@/images/projects/dog-iq-test.png'
-import logoPwd from '@/images/projects/pwd.png'
-import logoDateTime from '@/images/projects/datetime.png'
-import logoRiemannSums from '@/images/projects/riemann-sums.png'
+import logoY2K38 from '@/images/projects/y2k38.webp'
+import logoCatIQ from '@/images/projects/cat-iq-test.webp'
+import logoDogIQ from '@/images/projects/dog-iq-test.webp'
+import logoPwd from '@/images/projects/pwd.webp'
+import logoDateTime from '@/images/projects/datetime.webp'
+import logoRiemannSums from '@/images/projects/riemann-sums.webp'
 
 type App = {
   name: string
