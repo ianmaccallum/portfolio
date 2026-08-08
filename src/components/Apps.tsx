@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import { Container } from '@/components/Container'
+import { withAppStoreCampaign, campaignFor } from '@/lib/appstore'
 import { FadeIn } from '@/components/FadeIn'
 import downloadAppStore from '@/images/download-app-store.svg'
 
@@ -219,7 +220,10 @@ export function Apps() {
                   <div className="mt-4 flex flex-wrap gap-3">
                     {app.appStoreUrl && (
                       <Link
-                        href={app.appStoreUrl}
+                        href={withAppStoreCampaign(
+                          app.appStoreUrl,
+                          campaignFor('portfolio_apps', app.name),
+                        )}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="transition hover:opacity-80"
