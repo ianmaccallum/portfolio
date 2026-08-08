@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronDown, ExternalLink } from 'lucide-react'
 
 import { Container } from '@/components/Container'
+import { withAppStoreCampaign, campaignFor } from '@/lib/appstore'
 import { FadeIn } from '@/components/FadeIn'
 import { RocketIcon } from '@/components/icons'
 import downloadAppStore from '@/images/download-app-store.svg'
@@ -117,7 +118,9 @@ const moreProjects: Project[] = [
     name: 'Mojo Score Keeper',
     logo: logoMojo,
     description: 'Clean, intuitive score keeper for the card game Mojo.',
-    appStoreUrl: 'https://apps.apple.com/us/app/mojo-score-keeper/id6749283633',
+    // No appStoreUrl: id6749283633 no longer resolves (the app is not on the
+    // store and is not in App Store Connect). The card stays as portfolio
+    // history; restore the link only against a live id.
   },
   {
     name: 'Cat IQ Test',
@@ -192,7 +195,10 @@ function ProjectCard({ project }: { project: Project }) {
       {appStoreUrl && (
         <div className="relative z-10 mt-4">
           <Link
-            href={appStoreUrl}
+            href={withAppStoreCampaign(
+              appStoreUrl,
+              campaignFor('portfolio_projects', name),
+            )}
             target="_blank"
             rel="noopener noreferrer"
             className="transition hover:opacity-80"
