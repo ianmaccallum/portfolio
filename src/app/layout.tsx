@@ -41,6 +41,11 @@ export const metadata: Metadata = {
     description,
     creator: '@iancmaccallum',
   },
+  alternates: {
+    types: {
+      'text/plain': `${siteUrl}/llms.txt`,
+    },
+  },
   robots: {
     index: true,
     follow: true,

@@ -1,12 +1,55 @@
 import { MetadataRoute } from 'next'
 import { siteUrl } from '@/lib/info'
 
+// AI/LLM crawlers we explicitly welcome. Citations in ChatGPT, Claude,
+// Perplexity, and Gemini answers are valuable exposure for a personal site, and
+// llms.txt gives them a curated map of it.
+const AI_CRAWLERS = [
+  // OpenAI
+  'GPTBot',
+  'OAI-SearchBot',
+  'ChatGPT-User',
+  // Anthropic
+  'ClaudeBot',
+  'Claude-Web',
+  'Claude-User',
+  'Claude-SearchBot',
+  'anthropic-ai',
+  // Perplexity
+  'PerplexityBot',
+  'Perplexity-User',
+  // Google (Gemini / Vertex grounding)
+  'Google-Extended',
+  'Google-CloudVertexBot',
+  // Apple Intelligence
+  'Applebot-Extended',
+  // Meta AI
+  'Meta-ExternalAgent',
+  'Meta-ExternalFetcher',
+  'FacebookBot',
+  // Other answer engines that cite their sources
+  'DuckAssistBot',
+  'Amazonbot',
+  'cohere-ai',
+  'MistralAI-User',
+  'Kagibot',
+  'YouBot',
+  'Bytespider',
+  'CCBot',
+]
+
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-    },
+    rules: [
+      {
+        userAgent: '*',
+        allow: ['/', '/llms.txt'],
+      },
+      ...AI_CRAWLERS.map((userAgent) => ({
+        userAgent,
+        allow: ['/', '/llms.txt'],
+      })),
+    ],
     sitemap: `${siteUrl}/sitemap.xml`,
   }
 }
