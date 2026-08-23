@@ -10,12 +10,12 @@ export function GET() {
 
 > ${description}
 
-Ian MacCallum is a software engineer and founder based in the United States. He
-is currently Principal Software Engineer at Stable Kernel, was the founder of
-Parra (2024 to 2025), and before that was Staff Engineer, Tech Lead, and API
-Lead at Universe (YC W18) from 2020 to 2024. He holds a BS in Computer Science
-from the University of Florida. He builds iOS apps in Swift and web apps in
-TypeScript, React, and Next.js.
+Ian MacCallum is a software engineer and founder. He is currently Principal
+Software Engineer at Stable Kernel, was the founder of Parra (2024 to 2025), and
+before that was Staff Engineer, Tech Lead, and API Lead at Universe (YC W18)
+from 2020 to 2024. He was also Senior Software Engineer at Stable Kernel from
+2018 to 2020. He holds a Bachelor of Science in Computer Science from the
+University of Florida (2013 to 2018).
 
 ## Pages
 
