@@ -13,7 +13,8 @@
     "build": "next build",
     "build:cf": "opennextjs-cloudflare build",
     "preview": "opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare build && wrangler deploy",
+    "deploy": "bash scripts/deploy.sh",
+    "deploy:worker": "opennextjs-cloudflare build && wrangler deploy",
     "start": "next start",
     "lint": "next lint",
     "indexnow": "node scripts/indexnow-submit.mjs"
