@@ -20,7 +20,10 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 cd "$REPO_ROOT"
 
 # --- Config (per project) ---------------------------------------------------
-WEB_PORT=3004                  # next dev (host-managed)
+# 3063, not 3004: that port belongs to blueprint's app on this machine, and a
+# collision here would mean this script's own kill_port step kills blueprint's
+# dev server instead of freeing anything of its own.
+WEB_PORT=3063                  # next dev (host-managed)
 
 # --- Colors (only when stdout is a TTY) -------------------------------------
 if [ -t 1 ]; then
@@ -107,11 +110,27 @@ if $TUNNEL; then
   trap cleanup EXIT
 fi
 
+# --- Named *.localhost URL via portless (https://github.com/vercel-labs/portless) ------
+# Optional: everything above works on plain ports with no portless installed.
+HAVE_PORTLESS=0
+PORTLESS_SUFFIX=""
+if command -v portless >/dev/null 2>&1; then
+  HAVE_PORTLESS=1
+  echo "→ syncing portless routes"
+  portless proxy start --port 443 --https || true
+  portless alias portfolio "$WEB_PORT" --force >/dev/null 2>&1 || true
+  found_port=$(portless list 2>/dev/null | grep -o 'portfolio\.localhost:[0-9]*' | head -1 | cut -d: -f2 || true)
+  if [ -n "$found_port" ] && [ "$found_port" != "443" ]; then
+    PORTLESS_SUFFIX=":$found_port"
+  fi
+fi
+
 # --- Banner ----------------------------------------------------------------------------
 LAN_IP=$(ipconfig getifaddr en0 2>/dev/null || ipconfig getifaddr en1 2>/dev/null || echo "")
 echo ""
 printf "${C_BOLD}  Portfolio${C_RESET}\n"
 printf "  ${C_ACCENT}Local${C_RESET}     http://localhost:%s\n" "$WEB_PORT"
+[ "$HAVE_PORTLESS" = "1" ] && printf "  ${C_ACCENT}Named${C_RESET}     https://portfolio.localhost%s\n" "$PORTLESS_SUFFIX"
 [ -n "$LAN_IP" ] && printf "  ${C_ACCENT}Network${C_RESET}   http://%s:%s\n" "$LAN_IP" "$WEB_PORT"
 [ -n "$NGROK_URL" ] && printf "  ${C_ACCENT}Tunnel${C_RESET}    %s\n" "$NGROK_URL"
 printf "${C_DIM}  TUI: arrows switch tasks / m toggle / q quit${C_RESET}\n"
