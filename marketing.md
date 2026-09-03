@@ -496,7 +496,7 @@ For the portfolio (`/year-in-review` or `/2026`) — also distributable as a lon
 ## The stack
 - Swift 6 + SwiftData + StoreKit 2
 - Next.js 16 + Tailwind 4 + Prisma 7
-- Claude Code, Vercel, Neon, Resend, Beehiiv
+- Claude Code, Vercel, Neon, Cloudflare Email, Beehiiv
 
 ## What's next in 2027
 [2-3 specific public bets — creates accountability.]
