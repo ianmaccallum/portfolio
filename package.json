@@ -8,7 +8,7 @@
     "dev": "bash scripts/dev.sh",
     "dev:force": "bash scripts/dev.sh --force",
     "dev:tunnel": "bash scripts/dev.sh --tunnel",
-    "dev:web": "next dev --port 3004",
+    "dev:web": "next dev --port 3063",
     "dev:typecheck": "tsc --watch --noEmit --preserveWatchOutput",
     "build": "next build",
     "build:cf": "opennextjs-cloudflare build",
