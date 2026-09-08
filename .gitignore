@@ -46,3 +46,6 @@ next-env.d.ts
 # Written by scripts/deploy.sh after a successful local deploy; the
 # IndexNow diff base for the next one. Machine-local.
 .last-deploy-sha
+# Git worktrees (Claude Code)
+.worktrees/
+.claude/worktrees/
