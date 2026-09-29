@@ -1,3 +1,5 @@
+@AGENTS.md
+
 # portfolio
 
 Ian MacCallum's personal site, live at [ian.maccallum.dev](https://ian.maccallum.dev).
