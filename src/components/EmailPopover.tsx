@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useSyncExternalStore } from 'react'
 import {
   HoverCard,
   HoverCardContent,
@@ -55,23 +55,33 @@ function EmailContent() {
   )
 }
 
+function subscribeToNothing() {
+  // Touch capability never changes after load, so there is nothing to
+  // subscribe to; this store only exists to read the value safely on
+  // the client while matching the server-rendered snapshot on hydration.
+  return () => {}
+}
+
+function getTouchDeviceSnapshot() {
+  return 'ontouchstart' in window || navigator.maxTouchPoints > 0
+}
+
+function getServerTouchDeviceSnapshot() {
+  return false
+}
+
 export function EmailPopover({ children, ...props }: EmailPopoverProps) {
   const { className, ...propsRest } = props
-  const [isTouchDevice, setIsTouchDevice] = useState<boolean | null>(null)
-
-  useEffect(() => {
-    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0)
-  }, [])
+  const isTouchDevice = useSyncExternalStore(
+    subscribeToNothing,
+    getTouchDeviceSnapshot,
+    getServerTouchDeviceSnapshot
+  )
 
   const contentClassName = cn(
     'w-64 rounded-xl border-zinc-900/5 bg-white p-2 shadow-lg',
     className
   )
-
-  // Render children only until we detect touch capability
-  if (isTouchDevice === null) {
-    return <>{children}</>
-  }
 
   if (isTouchDevice) {
     return (

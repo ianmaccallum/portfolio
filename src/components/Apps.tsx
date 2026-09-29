@@ -196,7 +196,7 @@ export function Apps() {
             My Apps
           </h1>
           <p className="mt-4 text-lg text-zinc-600">
-            A collection of iOS apps and tools I've built, available on the App Store and the web.
+            A collection of iOS apps and tools I&apos;ve built, available on the App Store and the web.
           </p>
         </div>
 
