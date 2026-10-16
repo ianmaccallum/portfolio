@@ -1,16 +1,19 @@
 'use client'
 
-import { createContext, useEffect, useRef } from 'react'
+import { createContext, useState } from 'react'
 import { usePathname } from 'next/navigation'
 
 function usePrevious<T>(value: T) {
-  let ref = useRef<T | undefined>(undefined)
+  let [state, setState] = useState<{ value: T; previous: T | undefined }>({
+    value,
+    previous: undefined,
+  })
 
-  useEffect(() => {
-    ref.current = value
-  }, [value])
+  if (value !== state.value) {
+    setState({ value, previous: state.value })
+  }
 
-  return ref.current
+  return state.previous
 }
 
 export const AppContext = createContext<{ previousPathname?: string }>({})

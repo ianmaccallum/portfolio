@@ -5,7 +5,7 @@ export function ContactCTA() {
     <Container className="mt-24 md:mt-28">
       <div className="rounded-2xl bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 p-10 text-center dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-100">
         <h2 className="text-2xl md:text-3xl font-bold text-white dark:text-zinc-900">
-          Let's build something together
+          Let&apos;s build something together
         </h2>
         <p className="mt-3 text-zinc-300 max-w-md mx-auto dark:text-zinc-700">
           Open to consulting, freelance work, and interesting collaborations.

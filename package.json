@@ -16,7 +16,8 @@
     "deploy": "bash scripts/deploy.sh",
     "deploy:worker": "opennextjs-cloudflare build && wrangler deploy",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
+    "check": "bash scripts/check.sh",
     "indexnow": "node scripts/indexnow-submit.mjs"
   },
   "browserslist": "defaults, not ie <= 11",
