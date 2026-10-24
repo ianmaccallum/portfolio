@@ -14,17 +14,6 @@ export const metadata: Metadata = {
     default: name,
   },
   description,
-  keywords: [
-    'Ian MacCallum',
-    'software engineer',
-    'iOS developer',
-    'full stack developer',
-    'Parra',
-    'Swift',
-    'TypeScript',
-    'React',
-    'Next.js',
-  ],
   authors: [{ name, url: siteUrl }],
   creator: name,
   openGraph: {
