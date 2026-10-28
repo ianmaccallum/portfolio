@@ -20,10 +20,10 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 cd "$REPO_ROOT"
 
 # --- Config (per project) ---------------------------------------------------
-# 3063, not 3004: that port belongs to blueprint's app on this machine, and a
+# 3103, not 3004: that port belongs to blueprint's app on this machine, and a
 # collision here would mean this script's own kill_port step kills blueprint's
 # dev server instead of freeing anything of its own.
-WEB_PORT=3063                  # next dev (host-managed)
+WEB_PORT=3103                  # next dev (host-managed)
 
 # --- Colors (only when stdout is a TTY) -------------------------------------
 if [ -t 1 ]; then
